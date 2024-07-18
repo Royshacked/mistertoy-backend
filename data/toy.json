@@ -1,0 +1,22 @@
+[
+    {
+        "_id": "101",
+        "name": "Soldier",
+        "price": 1234,
+        "labels": [
+            "doll"
+        ],
+        "createdAt": 1631031801011,
+        "inStock": true
+    },
+    {
+        "name": "Doll",
+        "price": 100,
+        "labels": [
+            "doll"
+        ],
+        "inStock": true,
+        "_id": "1feZG",
+        "createdAt": 1721321249082
+    }
+]
