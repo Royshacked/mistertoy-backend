@@ -32,7 +32,7 @@ app.get('/api/toy', (req, res) => {
         inStock: req.query.inStock || 'all',
         sortBy: req.query.sortBy || '',
         desc: req.query.desc || '-1',
-        labels: req.query.labels ||  [],
+        labels: req.query.labels || [],
     }
 
     toyService.query(filterBy)
