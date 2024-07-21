@@ -11,9 +11,10 @@
     },
     {
         "name": "Doll",
-        "price": 100,
+        "price": 200,
         "labels": [
-            "doll"
+            "doll",
+            "puzzle"
         ],
         "inStock": true,
         "_id": "1feZG",

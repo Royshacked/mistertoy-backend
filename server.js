@@ -44,18 +44,28 @@ app.get('/api/toy', (req, res) => {
         })
 })
 
-// toy READ
-app.get('/api/toy/:toyId', (req, res) => {
-    const { toyId } = req.params
-    toyService.getById(toyId)
-        .then((toy) => {
-            res.send(toy)
-        })
+//Labels READ
+app.get('/api/toy/labels', (req,res) => {
+    toyService.getLabels()
+        .then((labels) => res.send(labels))
         .catch((err) => {
-            loggerService.error('Cannot get toy', err)
-            res.status(400).send('Cannot get toy')
+            loggerService.error('Cannot get labels')
+            res.status(400).send('Cannot get labels')
         })
 })
+
+// // toy READ
+// app.get('/api/toy/:toyId', (req, res) => {
+//     const { toyId } = req.params
+//     toyService.getById(toyId)
+//         .then((toy) => {
+//             res.send(toy)
+//         })
+//         .catch((err) => {
+//             loggerService.error('Cannot get toy', err)
+//             res.status(400).send('Cannot get toy')
+//         })
+// })
 
 // toy CREATE
 app.post('/api/toy', (req, res) => {

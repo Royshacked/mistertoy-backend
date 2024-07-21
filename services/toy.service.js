@@ -7,7 +7,8 @@ export const toyService = {
     query,
     getById,
     remove,
-    save
+    save,
+    getLabels,
 }
 
 const toys = utilService.readJsonFile('data/toy.json')
@@ -37,7 +38,6 @@ function query(filterBy = {}) {
 }
 
 function getById(toyId) {
-    console.log(toys)
     const toy = toys.find(toy => toy._id === toyId)
     return Promise.resolve(toy)
 }
@@ -64,6 +64,14 @@ function save(toy) {
     }
 
     return _savetoysToFile().then(() => toy)
+}
+
+function getLabels() {
+    const labels = toys.reduce((acc,toy) => {
+        const newLabels = toy.labels.filter(label => !acc.includes(label))
+        return  acc = [...acc, ...newLabels]
+    },[])
+    return Promise.resolve(labels)
 }
 
 
