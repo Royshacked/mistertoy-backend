@@ -31,7 +31,8 @@ app.get('/api/toy', (req, res) => {
         name: req.query.name || '',
         inStock: req.query.inStock || 'all',
         sortBy: req.query.sortBy || '',
-        desc: req.query.desc || '-1'
+        desc: req.query.desc || '-1',
+        labels: req.query.labels ||  [],
     }
 
     toyService.query(filterBy)
@@ -54,18 +55,18 @@ app.get('/api/toy/labels', (req,res) => {
         })
 })
 
-// // toy READ
-// app.get('/api/toy/:toyId', (req, res) => {
-//     const { toyId } = req.params
-//     toyService.getById(toyId)
-//         .then((toy) => {
-//             res.send(toy)
-//         })
-//         .catch((err) => {
-//             loggerService.error('Cannot get toy', err)
-//             res.status(400).send('Cannot get toy')
-//         })
-// })
+// toy READ
+app.get('/api/toy/:toyId', (req, res) => {
+    const { toyId } = req.params
+    toyService.getById(toyId)
+        .then((toy) => {
+            res.send(toy)
+        })
+        .catch((err) => {
+            loggerService.error('Cannot get toy', err)
+            res.status(400).send('Cannot get toy')
+        })
+})
 
 // toy CREATE
 app.post('/api/toy', (req, res) => {

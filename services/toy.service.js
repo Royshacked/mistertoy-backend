@@ -25,6 +25,10 @@ function query(filterBy = {}) {
         filteredToys = filteredToys.filter(toy => toy.inStock.toString() === filterBy.inStock || filterBy.inStock === 'all')
     }
 
+    if(filterBy.labels.length > 0) {
+        filteredToys = filteredToys.filter(toy=> filterBy.labels.every(label=> toy.labels.includes(label)))
+    }
+
     if (filterBy.sortBy) {
         const { sortBy } = filterBy
         const dir = +filterBy.desc
