@@ -14,7 +14,8 @@
         "price": 200,
         "labels": [
             "doll",
-            "puzzle"
+            "puzzle",
+            "art"
         ],
         "inStock": true,
         "_id": "1feZG",

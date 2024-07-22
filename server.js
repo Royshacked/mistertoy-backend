@@ -31,7 +31,7 @@ app.get('/api/toy', (req, res) => {
         name: req.query.name || '',
         inStock: req.query.inStock || 'all',
         sortBy: req.query.sortBy || '',
-        desc: req.query.desc || '-1',
+        desc: +req.query.desc || -1,
         labels: req.query.labels || [],
     }
 
@@ -46,7 +46,7 @@ app.get('/api/toy', (req, res) => {
 })
 
 //Labels READ
-app.get('/api/toy/labels', (req,res) => {
+app.get('/api/toy/labels', (req, res) => {
     toyService.getLabels()
         .then((labels) => res.send(labels))
         .catch((err) => {
@@ -93,6 +93,7 @@ app.put('/api/toy', (req, res) => {
         _id: req.body._id,
         name: req.body.name,
         price: +req.body.price,
+        labels: req.body.labels,
     }
     toyService.save(toy)
         .then((savedtoy) => {

@@ -25,8 +25,8 @@ function query(filterBy = {}) {
         filteredToys = filteredToys.filter(toy => toy.inStock.toString() === filterBy.inStock || filterBy.inStock === 'all')
     }
 
-    if(filterBy.labels[0]) {
-        filteredToys = filteredToys.filter(toy=> filterBy.labels.every(label=> toy.labels.includes(label)))
+    if (filterBy.labels[0]) {
+        filteredToys = filteredToys.filter(toy => filterBy.labels.every(label => toy.labels.includes(label)))
     }
 
     if (filterBy.sortBy) {
@@ -60,6 +60,7 @@ function save(toy) {
 
         toyToUpdate.name = toy.name
         toyToUpdate.price = toy.price
+        toyToUpdate.labels = toy.labels
         toy = toyToUpdate
     } else {
         toy._id = utilService.makeId()
@@ -71,10 +72,10 @@ function save(toy) {
 }
 
 function getLabels() {
-    const labels = toys.reduce((acc,toy) => {
+    const labels = toys.reduce((acc, toy) => {
         const newLabels = toy.labels.filter(label => !acc.includes(label))
-        return  acc = [...acc, ...newLabels]
-    },[])
+        return acc = [...acc, ...newLabels]
+    }, [])
     return Promise.resolve(labels)
 }
 
