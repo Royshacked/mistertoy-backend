@@ -4,7 +4,8 @@
         "name": "Soldier",
         "price": 1234,
         "labels": [
-            "doll"
+            "doll",
+            "box game"
         ],
         "createdAt": 1631031801011,
         "inStock": true
@@ -44,9 +45,10 @@
     },
     {
         "name": "BasketBALL",
-        "price": "15",
+        "price": 15,
         "labels": [
-            "outdoor"
+            "outdoor",
+            "baby"
         ],
         "inStock": true,
         "_id": "n4OPY",
