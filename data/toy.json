@@ -1,18 +1,18 @@
 [
     {
-        "_id": "101",
-        "name": "Soldier",
-        "price": 1234,
+        "name": "Basketball",
+        "price": 15,
         "labels": [
-            "doll",
-            "box game"
+            "outdoor",
+            "baby"
         ],
-        "createdAt": 1631031801011,
-        "inStock": true
+        "inStock": true,
+        "_id": "n4OPY",
+        "createdAt": 1721880766222
     },
     {
         "name": "Doll",
-        "price": 200,
+        "price": 15,
         "labels": [
             "doll",
             "puzzle",
@@ -21,6 +21,16 @@
         "inStock": true,
         "_id": "1feZG",
         "createdAt": 1721321249082
+    },
+    {
+        "name": "Football",
+        "price": "50",
+        "labels": [
+            "outdoor"
+        ],
+        "inStock": true,
+        "_id": "wtCt3",
+        "createdAt": 1721790778690
     },
     {
         "name": "Puzzle",
@@ -34,24 +44,14 @@
         "createdAt": 1721744378001
     },
     {
-        "name": "Football",
-        "price": "50",
+        "_id": "101",
+        "name": "Soldier",
+        "price": 1234,
         "labels": [
-            "outdoor"
+            "doll",
+            "box game"
         ],
-        "inStock": true,
-        "_id": "wtCt3",
-        "createdAt": 1721790778690
-    },
-    {
-        "name": "BasketBALL",
-        "price": 15,
-        "labels": [
-            "outdoor",
-            "baby"
-        ],
-        "inStock": true,
-        "_id": "n4OPY",
-        "createdAt": 1721880766222
+        "createdAt": 1631031801011,
+        "inStock": true
     }
 ]
