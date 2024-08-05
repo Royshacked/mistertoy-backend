@@ -18,19 +18,16 @@ export const toyService = {
 }
 
 async function query(filterBy = {}) {
+	console.log(filterBy)
 	try {
 		const criteria = {}
-		const sortBy = {}
+		let sortBy = {}
+
 		if (filterBy.name) criteria.name = { $regex: filterBy.name, $options: 'i' }
 		if (filterBy.inStock !== 'all') criteria.inStock = JSON.parse(filterBy.inStock)
 		if (filterBy.labels.length > 0) criteria.labels = { $in: filterBy.labels }
 		if (filterBy.sortBy) sortBy = { [filterBy.sortBy]: filterBy.desc }
-		// const criteria = {
-		// 	name: { $regex: filterBy.name, $options: 'i' },
-		// 	// inStock: filterBy.inStock !== 'all' ? JSON.parse(filterBy.inStock) : '',
-		// 	labels: { $in: filterBy.labels },
-		// }
-		// .sort({ [filterBy.sortBy]: filterBy.desc })
+
 		const collection = await dbService.getCollection('toy')
 		var toys = await collection.find(criteria).sort(sortBy).toArray()
 		return toys
